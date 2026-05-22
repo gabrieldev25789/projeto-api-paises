@@ -1,12 +1,16 @@
+import { useState } from "react"
+
 function Pesquisa({countries}) {
-  
+  const [valor, setValor] = useState("")
+
+
   console.log(countries)
   countries.forEach((pais)=>{
     const nome = pais.name.common
     console.log(nome)
   })
 
-  return (
+return (
     <section className="pesquisa">
       <div className="pesquisa-container">
         <label htmlFor="input-pais">
@@ -16,6 +20,8 @@ function Pesquisa({countries}) {
         <input
           id="input-pais"
           type="text"
+          value={valor}
+          onChange={(e)=> setValor(e.target.value)}
           placeholder="Digite o nome do país..."
         />
 
