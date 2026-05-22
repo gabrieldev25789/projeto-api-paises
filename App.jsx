@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { getCountries } from "./Services/api"
+import Pesquisa from "./Components/Pesquisa"
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -26,13 +27,7 @@ function App() {
   if (error) return <p>Erro: {error}</p>
 
   return (
-    <ul>
-      {countries.map(country => (
-        <li key={country.name.common}>
-          {country.name.official}
-        </li>
-      ))}
-    </ul>
+    <Pesquisa countries={countries}/>
   )
 }
 
