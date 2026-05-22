@@ -1,56 +1,60 @@
 .pesquisa {
-  padding: 1.5rem 1rem;
+  background: #111;
+  padding: 2.5rem 2rem;
 }
 
 .pesquisa-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: 480px;
+  gap: 10px;
+  max-width: 440px;
   width: 100%;
 }
 
 .pesquisa-container label {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--color-text-secondary);
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
 }
 
 .pesquisa-container input {
-  width: 100%;
-  padding: 10px 14px;
-  font-size: 15px;
-  border: 0.5px solid var(--color-border-secondary);
-  border-radius: var(--border-radius-md);
-  background: var(--color-background-primary);
-  color: var(--color-text-primary);
+  flex: 1;
+  padding: 11px 14px;
+  font-size: 14px;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
   outline: none;
-  box-sizing: border-box;
   transition: border-color 0.15s;
 }
 
+.pesquisa-container input::placeholder {
+  color: #444;
+}
+
 .pesquisa-container input:focus {
-  border-color: var(--color-border-primary);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+  border-color: #444;
 }
 
 .pesquisa-container button {
-  align-self: flex-start;
-  padding: 10px 20px;
+  padding: 11px 18px;
   font-size: 14px;
   font-weight: 500;
+  background: #f0f0f0;
+  color: #111;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  border: 0.5px solid var(--color-border-secondary);
-  border-radius: var(--border-radius-md);
-  background: var(--color-background-primary);
-  color: var(--color-text-primary);
   transition: background 0.15s;
 }
 
 .pesquisa-container button:hover {
-  background: var(--color-background-secondary);
-}
-
-.pesquisa-container button:active {
-  transform: scale(0.98);
+  background: #d4d4d4;
 }
