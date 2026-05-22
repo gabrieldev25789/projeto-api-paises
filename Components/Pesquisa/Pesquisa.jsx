@@ -1,4 +1,10 @@
-function Pesquisa() {
+function Pesquisa({countries}) {
+
+    countries.forEach((pais)=>{
+        const nome = pais.name.common
+        console.log(nome)
+    })
+
   return (
     <section className="pesquisa">
       <div className="pesquisa-container">
