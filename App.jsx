@@ -11,7 +11,6 @@ function App() {
     async function fetchCountries() {
       try {
         const data = await getCountries()
-        console.log(data)
         setCountries(data)
       } catch (err) {
         setError(err.message)
