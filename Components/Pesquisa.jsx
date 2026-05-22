@@ -4,11 +4,16 @@ import "./Pesquisa.css"
 function Pesquisa({countries}) {
   const [valor, setValor] = useState("")
 
-  console.log(countries)
+function pesquisaPaises(){
+  if(valor){
   countries.forEach((pais)=>{
     const nome = pais.name.common
     console.log(nome)
   })
+} else{
+  alert("Digite um valor")
+}
+}
 
   return (
    <section class="pesquisa">
@@ -22,7 +27,7 @@ function Pesquisa({countries}) {
             onChange={(e)=> setValor(e.target.value)}
             placeholder="Digite o nome do país..."
           />
-          <button>Pesquisar</button>
+          <button onClick={() => pesquisaPaises()}>Pesquisar</button>
         </div>
       </div>
     </section>
