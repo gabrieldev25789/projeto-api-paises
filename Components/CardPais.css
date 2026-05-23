@@ -1,0 +1,45 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+.card-pais {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 260px;
+  transition: transform 0.15s ease;
+}
+
+.card-pais:hover {
+  transform: translateY(-4px);
+}
+
+.card-pais img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-pais ul {
+  list-style: none;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-pais ul li:first-child {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-bottom: 4px;
+}
+
+.card-pais ul li {
+  font-size: 13px;
+  color: #666;
+}
