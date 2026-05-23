@@ -1,68 +1,13 @@
 import { useState } from "react"
 import "./Filtros.css"
 
-function Filtros({countries, setAfricaFilter, setAmericaFilter, setAsiaFilter, setEuropeFilter, setOceaniaFilter, setAntarcticFilter}) {
+function Filtros({ setRegiao }) {
 
     const [active, setActive] = useState("")
 
-    const africa = () => {
-        const resultado = countries.filter((pais) => pais.region === "Africa")
-        console.log(resultado)
-        setAfricaFilter(true)
-        setActive("africa")
-
-        const setters = [setAmericaFilter, setAntarcticFilter, setAsiaFilter, setEuropeFilter, setOceaniaFilter]
-        setters.forEach((set)=> set(false))
-    }
-
-    const america = () => {
-        const resultado = countries.filter((pais) => pais.region === "Americas")
-        console.log(resultado)
-        setAmericaFilter(true)
-        setActive("america")
-
-        const setters = [setAfricaFilter, setAntarcticFilter, setAsiaFilter, setEuropeFilter, setOceaniaFilter]
-        setters.forEach((set)=> set(false))
-    }
-
-    const asia = () => {
-        const resultado = countries.filter((pais) => pais.region === "Asia")
-        console.log(resultado)
-        setAsiaFilter(true)
-        setActive("asia")
-
-        const setters = [setAfricaFilter, setAntarcticFilter, setAmericaFilter, setEuropeFilter, setOceaniaFilter]
-        setters.forEach((set)=> set(false))
-    }
-
-    const europe = () => {
-        const resultado = countries.filter((pais) => pais.region === "Europe")
-        console.log(resultado)
-        setEuropeFilter(true)
-        setActive("europe")
-
-        const setters = [setAmericaFilter, setAntarcticFilter, setAsiaFilter, setAfricaFilter, setOceaniaFilter]
-        setters.forEach((set)=> set(false))
-    }
-
-    const oceania = () => {
-        const resultado = countries.filter((pais) => pais.region === "Oceania")
-        console.log(resultado)
-        setOceaniaFilter(true)
-        setActive("oceania")
-
-        const setters = [setAmericaFilter, setAntarcticFilter, setAsiaFilter, setEuropeFilter, setAfricaFilter]
-        setters.forEach((set)=> set(false))
-    }
-
-    const antarctic = () => {
-        const resultado = countries.filter((pais) => pais.region === "Antarctic")
-        console.log(resultado)
-        setAntarcticFilter(true)
-        setActive("antarctic")
-
-        const setters = [setAmericaFilter, setAfricaFilter, setAsiaFilter, setEuropeFilter, setOceaniaFilter]
-        setters.forEach((set)=> set(false))
+    function escolherPais(valor) {
+        setActive(valor)
+        setRegiao(valor)
     }
 
   return (
@@ -71,19 +16,14 @@ function Filtros({countries, setAfricaFilter, setAmericaFilter, setAsiaFilter, s
       <div className="filter-group">
         <p className="filter-label">Região</p>
         <div className="region-buttons">
-          <button className="region-btn" data-region="">Todas</button>
 
-          <button className={active === "africa" ? "region-btn active" : "region-btn"} onClick={() => africa()} data-region="Africa">África</button>
-
-          <button className={active === "america" ? "region-btn active" : "region-btn"} onClick={() => america()} data-region="Americas">Américas</button>
-
-          <button className={active === "asia" ? "region-btn active" : "region-btn"} onClick={() => asia()} data-region="Asia">Ásia</button>
-
-          <button className={active === "europe" ? "region-btn active" : "region-btn"} onClick={() => europe()} data-region="Europe">Europa</button>
-
-          <button className={active === "oceania" ? "region-btn active" : "region-btn"} onClick={() => oceania()} data-region="Oceania">Oceania</button>
-
-          <button className={active === "antarctic" ? "region-btn active" : "region-btn"} onClick={() => antarctic()} data-region="Antarctic">Antártica</button>
+          <button className={active === "" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("")}>Todas</button>
+          <button className={active === "Africa" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("Africa")}>África</button>
+          <button className={active === "Americas" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("Americas")}>Américas</button>
+          <button className={active === "Asia" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("Asia")}>Ásia</button>
+          <button className={active === "Europe" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("Europe")}>Europa</button>
+          <button className={active === "Oceania" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("Oceania")}>Oceania</button>
+          <button className={active === "Antarctic" ? "region-btn active" : "region-btn"} onClick={() => escolherPais("Antarctic")}>Antártica</button>
 
         </div>
       </div>
@@ -99,7 +39,7 @@ function Filtros({countries, setAfricaFilter, setAmericaFilter, setAsiaFilter, s
         </div>
       </div>
 
-      <button className="clear-btn">Limpar filtros</button>
+      <button className="clear-btn" onClick={() => escolherPais("")}>Limpar filtros</button>
 
     </div>
   )
