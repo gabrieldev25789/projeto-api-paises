@@ -1,6 +1,7 @@
 import "./Filtros.css"
 
 function Filtros() {
+    console.log("AAAAAAAAAAAAAAA")
   return (
     <div className="filters">
 
