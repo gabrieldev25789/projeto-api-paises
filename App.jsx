@@ -33,11 +33,15 @@ function App() {
   return (
     <>
       <Pesquisa valor={valor} setValor={setValor} />
-      <ul>
-        {paisesFiltrados.map((pais) => (
-          <li key={pais.name.common}>{pais.name.common}</li>
-        ))}
-      </ul>
+
+      {valor && paisesFiltrados.map((pais)=> (
+        <div>
+          <ul>
+            <li key={pais.name.common}>{pais.name.common}</li>
+          </ul>
+            <img src={pais.flags.png} alt="" />
+        </div>
+      ))}
     </>
   )
 }
