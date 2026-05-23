@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { getCountries } from "./Services/api"
 import Pesquisa from "./Components/Pesquisa"
 import Filtros from "./Components/Filtros"
+import CardPais from "./Components/CardPais"
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -38,14 +39,11 @@ function App() {
       <Pesquisa valor={valor} setValor={setValor} />
       <Filtros setRegiao={setRegiao} />
 
+    <div className="cards-grid">
       {paisesFiltrados.map((pais) => (
-        <div key={pais.name.common}>
-          <ul>
-            <li>{pais.name.common}</li>
-          </ul>
-          <img src={pais.flags.png} alt="Bandeira do país" />
-        </div>
+        <CardPais key={pais.name.common} pais={pais} />
       ))}
+    </div>
     </>
   )
 }
