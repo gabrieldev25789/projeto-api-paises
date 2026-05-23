@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getCountries } from "./Services/api"
 import Pesquisa from "./Components/Pesquisa"
+import Filtros from "./Components/Filtros"
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -33,6 +34,7 @@ function App() {
   return (
     <>
       <Pesquisa valor={valor} setValor={setValor} />
+      <Filtros />
 
       {valor && paisesFiltrados.map((pais)=> (
         <div>
