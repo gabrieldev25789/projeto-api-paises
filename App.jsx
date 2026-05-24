@@ -11,11 +11,7 @@ function App() {
   const [valor, setValor] = useState("")
   const [regiao, setRegiao] = useState("")
 
-  const [maiorUmMi, setMaiorUmMi] = useState(false)
-  const [maiorDezMi, setMaiorDezMi] = useState(false)
-  const [maiorCemMi, setMaiorCemMi] = useState(false)
-  const [menorUmMi, setMenorUmMi] = useState(false)
-  const [qualquerTamanho, setQualquerTamanho] = useState(false)
+  const [populacao, setPopulacao] = useState("")
 
   useEffect(() => {
     async function fetchCountries() {
@@ -38,14 +34,15 @@ function App() {
       const paisesFiltrados = countries.filter((pais) => {
       const porRegiao = pais.region.includes(regiao)
       const porNome = pais.name.common.toLowerCase().includes(valor.toLowerCase())
-      const porPopQualquer = !qualquerTamanho || (pais.population)
-      const porPopMaiorUmMi = !maiorUmMi || (pais.population >= 1_000_000 && pais.population < 10_000_000)
-      const porPopMaiorDezMi = !maiorDezMi || (pais.population >= 10_000_000 && pais.population < 100_000_000)
-      const porPopMaiorCemMi = !maiorCemMi || (pais.population > 100_000_000)
-      const popMenorUmMi = !menorUmMi || (pais.population < 1_000_000)
+      const porPop =
+        populacao === "" ||
+        (populacao === "lt1m"     && pais.population < 1_000_000) ||
+        (populacao === "1m-10m"   && pais.population >= 1_000_000  && pais.population < 10_000_000) ||
+        (populacao === "10m-100m" && pais.population >= 10_000_000 && pais.population < 100_000_000) ||
+        (populacao === "gt100m"   && pais.population >= 100_000_000)
 
-      return porRegiao && porNome && porPopMaiorUmMi && porPopMaiorDezMi && porPopMaiorCemMi && popMenorUmMi && porPopQualquer
-    })
+        return porRegiao && porNome && porPop
+      })
 
   return (
     <>
@@ -53,11 +50,7 @@ function App() {
       <Filtros 
       setRegiao={setRegiao} 
       countries={countries} 
-      setMaiorUmMi={setMaiorUmMi}
-      setMaiorDezMi={setMaiorDezMi}
-      setMaiorCemMi={setMaiorCemMi}
-      setMenorUmMi={setMenorUmMi}
-      setQualquerTamanho={setQualquerTamanho}/>
+      setPopulacao={setPopulacao}/>
 
     <div className="cards-grid">
       {paisesFiltrados.map((pais) => (
