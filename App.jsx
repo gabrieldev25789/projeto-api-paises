@@ -44,18 +44,24 @@ function App() {
         return porRegiao && porNome && porPop
       })
 
-  return (
+
+return (
     <>
       <Pesquisa valor={valor} setValor={setValor} />
       <Filtros 
       setRegiao={setRegiao} 
       countries={countries} 
-      setPopulacao={setPopulacao}/>
+      setPopulacao={setPopulacao}
+      />
+
+    {paisesFiltrados.length === 0 && (
+     <h2>Nenhuma país encontrado</h2>)
+    }
 
     <div className="cards-grid">
-      {paisesFiltrados.map((pais) => (
-        <CardPais key={pais.name.common} pais={pais} />
-      ))}
+    {paisesFiltrados.map((pais) => (
+      <CardPais key={pais.name.common} pais={pais} />
+    ))}
     </div>
     </>
   )
