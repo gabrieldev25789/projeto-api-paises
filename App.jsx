@@ -42,7 +42,7 @@ function App() {
         (populacao === "gt100m"   && pais.population >= 100_000_000)
 
         return porRegiao && porNome && porPop
-      })
+      }).sort((a, b) => a.population - b.population)
 
 
 return (
