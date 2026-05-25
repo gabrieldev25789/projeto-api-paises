@@ -1,45 +1,138 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-  padding: 24px;
+  gap: 20px;
+  padding: 32px;
 }
 
 .card-pais {
-  background-color: #1a1a1a;
-  border-radius: 12px;
+  background: #111114;
+  border-radius: 16px;
   overflow: hidden;
-  width: 260px;
-  transition: transform 0.15s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-pais:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
 }
 
-.card-pais img {
+/* --- Imagem --- */
+.card-img-wrap {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+
+.card-img-wrap img {
   width: 100%;
-  height: 160px;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.35s ease;
+  filter: brightness(0.88) saturate(1.1);
 }
 
-.card-pais ul {
-  list-style: none;
-  padding: 16px;
+.card-pais:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* Gradiente que suaviza a imagem para o card body */
+.card-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(17, 17, 20, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Badge de região sobre a imagem */
+.card-region {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+/* --- Corpo --- */
+.card-body {
+  padding: 16px 18px 18px;
+}
+
+.card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ebebeb;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-details {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
 }
 
-.card-pais ul li:first-child {
-  font-size: 15px;
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-label {
+  font-size: 10px;
   font-weight: 500;
-  color: #e0e0e0;
-  margin-bottom: 4px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #bdbdbd;
+  min-width: 68px;
 }
 
-.card-pais ul li {
-  font-size: 13px;
-  color: #666;
+.card-value {
+  font-size: 12.5px;
+  color: #dbdbdb;
+}
+
+/* --- Barra de população --- */
+.card-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px 0 8px;
+}
+
+.card-pop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pop-bar-wrap {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-left: 8px;
+}
+
+.pop-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #3b5bdb, #6fa3ef);
 }
