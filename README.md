@@ -7,7 +7,7 @@ Aplicação React que consome a [REST Countries API](https://restcountries.com/)
 ## 📸 Preview
 
 <!-- Print da tela principal com os cards -->
-![Tela principal](./screenshots/home.png)
+![Tela principal](../projeto-api/src/assets/prints/print6.png)
 
 ---
 
@@ -26,27 +26,27 @@ Aplicação React que consome a [REST Countries API](https://restcountries.com/)
 ### Tela inicial — todos os países
 
 <!-- Print mostrando o grid de cards sem filtros aplicados -->
-![Todos os países](./screenshots/todos-os-paises.png)
+![Todos os países](../projeto-api/src/assets/prints/print1.png)
 
 ### Filtro por região
 
 <!-- Print com alguma região selecionada, ex: Europa -->
-![Filtro por região](./screenshots/filtro-regiao.png)
+![Filtro por região](../projeto-api/src/assets/prints/print2.png)
 
 ### Filtro por população
 
 <!-- Print com um filtro de população ativo -->
-![Filtro por população](./screenshots/filtro-populacao.png)
+![Filtro por população](../projeto-api/src/assets/prints/print3.png)
 
 ### Pesquisa por nome
 
 <!-- Print mostrando resultado de uma pesquisa, ex: "bra" -->
-![Pesquisa por nome](./screenshots/pesquisa.png)
+![Pesquisa por nome](../projeto-api/src/assets/prints/print4.png)
 
 ### Nenhum resultado encontrado
 
 <!-- Print da mensagem quando nenhum país bate com os filtros -->
-![Sem resultados](./screenshots/sem-resultados.png)
+![Sem resultados](../projeto-api/src/assets/prints/print5.png)
 
 ---
 
@@ -64,15 +64,12 @@ Aplicação React que consome a [REST Countries API](https://restcountries.com/)
 ```
 src/
 ├── Components/
-│   ├── CardPais/
-│   │   ├── CardPais.jsx
-│   │   └── CardPais.css
-│   ├── Filtros/
-│   │   ├── Filtros.jsx
-│   │   └── Filtros.css
-│   └── Pesquisa/
-│       ├── Pesquisa.jsx
-│       └── Pesquisa.css
+│        ├── CardPais.jsx
+│        └── CardPais.css
+│        ├── Filtros.jsx
+│        └── Filtros.css
+│        ├── Pesquisa.jsx
+│        └── Pesquisa.css
 ├── Services/
 │   └── api.js
 └── App.jsx
@@ -84,10 +81,10 @@ src/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/gabrieldev25789/nome-do-repo.git
+git clone https://github.com/gabrieldev25789/projeto-api-paises
 
 # Acesse a pasta do projeto
-cd nome-do-repo
+cd projeto-api-paises
 
 # Instale as dependências
 npm install
@@ -96,7 +93,7 @@ npm install
 npm run dev
 ```
 
-Acesse em: `http://localhost:5173`
+Deploy: `http://localhost:5173`
 
 ---
 
@@ -104,13 +101,3 @@ Acesse em: `http://localhost:5173`
 
 Todos os dados vêm da [REST Countries API](https://restcountries.com/) — gratuita e sem necessidade de autenticação.
 
-Endpoint principal:
-```
-GET https://restcountries.com/v3.1/all
-```
-
----
-
-## 👨‍💻 Autor
-
-Feito por **Gabriel** — [github.com/gabrieldev25789](https://github.com/gabrieldev25789)
