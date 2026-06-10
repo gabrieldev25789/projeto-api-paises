@@ -93,7 +93,7 @@ npm install
 npm run dev
 ```
 
-Deploy: `http://localhost:5173`
+Deploy: `https://projeto-api-paises.vercel.app/`
 
 ---
 
