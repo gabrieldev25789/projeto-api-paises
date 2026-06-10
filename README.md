@@ -7,7 +7,7 @@ Aplicação React que consome a [REST Countries API](https://restcountries.com/)
 ## 📸 Preview
 
 <!-- Print da tela principal com os cards -->
-![Tela principal](../projeto-api/src/assets/prints/print6.png)
+![Tela principal](src/assets/prints/print6.png)
 
 ---
 
@@ -26,27 +26,27 @@ Aplicação React que consome a [REST Countries API](https://restcountries.com/)
 ### Tela inicial — todos os países
 
 <!-- Print mostrando o grid de cards sem filtros aplicados -->
-![Todos os países](../projeto-api/src/assets/prints/print1.png)
+![Todos os países](src/assets/prints/print1.png)
 
 ### Filtro por região
 
 <!-- Print com alguma região selecionada, ex: Europa -->
-![Filtro por região](../projeto-api/src/assets/prints/print2.png)
+![Filtro por região](src/assets/prints/print2.png)
 
 ### Filtro por população
 
 <!-- Print com um filtro de população ativo -->
-![Filtro por população](../projeto-api/src/assets/prints/print3.png)
+![Filtro por população](src/assets/prints/print3.png)
 
 ### Pesquisa por nome
 
 <!-- Print mostrando resultado de uma pesquisa, ex: "bra" -->
-![Pesquisa por nome](../projeto-api/src/assets/prints/print4.png)
+![Pesquisa por nome](src/assets/prints/print4.png)
 
 ### Nenhum resultado encontrado
 
 <!-- Print da mensagem quando nenhum país bate com os filtros -->
-![Sem resultados](../projeto-api/src/assets/prints/print5.png)
+![Sem resultados](src/assets/prints/print5.png)
 
 ---
 
